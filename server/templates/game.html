@@ -367,6 +367,7 @@
         transition: 0.4s;
         background-color: rgb(243, 243, 243);
         margin-top: 0%;
+        z-index: 999;
     }
     
     .animationbox {
@@ -484,30 +485,30 @@
 </style>
 
 <body>
-    <h1 id='maintitle' class='beforeload'>LingoTowns</h1>
-    <canvas id='app' width='500' height='500'></canvas>
-    <canvas style='border:1px solid black;position:absolute;bottom:2vh;right:2vh;background:white;z-index:100;' id='minimap' width='200' height='200'></canvas>
-    <div id='edge_of_playarea'>
+    <h1 id="maintitle" class="beforeload">LingoTowns</h1>
+    <canvas id="app" width="500" height="500"></canvas>
+    <canvas style="border:1px solid black;position:absolute;bottom:2vh;right:2vh;background:white;z-index:100;" id="minimap" width="200" height="200"></canvas>
+    <div id="edge_of_playarea">
         <div class='content'>
             <i class="bi bi-exclamation-triangle"></i>&nbsp;<b>Warning:</b> You're nearing the edge of the play area, click here to go home!
         </div>
     </div>
     {% if is_guest %}
-    <div id='loginreminder' class='close'>
-        <p>Hey there, you're currently playing as a guest - Would you like to register so we can keep track of your scores? <a class='btn' href='https://auth.tileattack.com/create-account?redirect=https://lingotowns.com'>Yes</a>&nbsp;<a id='loginreminderclose'
-                href='#' class='btn secondary'>No thanks</a></p>
+    <div id="loginreminder" class="close">
+        <p>Hey there, you're currently playing as a guest - Would you like to register so we can keep track of your scores? <a class="btn" href="https://auth.tileattack.com/create-account?redirect=https://lingotowns.com">Yes</a>&nbsp;<a id="loginreminderclose"
+                href="#" class="btn secondary">No thanks</a></p>
     </div>
     <div class="tutorialbubble">
 
-        <div class=animationbox>
-            <lottie-player src="/story/charactalk.json" autoplay background=transparent speed="1" style=" height: 100%; width: 100%;">
+        <div class="animationbox">
+            <lottie-player src="/story/charactalk.json" autoplay background="transparent" speed="1" style="height: 100%; width: 100%;">
             </lottie-player>
         </div>
-        <div class=text>
+        <div class="text">
             <p> Welcome to LingoTowns! This is the map of the world. You can explore different towns and find games in each building.</p>
         </div>
     </div>
-    <div class=allbuttons>
+    <div class="allbuttons">
         <button class="swiper-button-prev">Prev</button>
         <button class="swiper-button-next">Next</button></div>
     </div>
