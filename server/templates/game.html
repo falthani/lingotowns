@@ -502,14 +502,22 @@
     }
 
     @keyframes fadein {
-    0% { opacity: 0; }
+        0% {
+            opacity: 0;
+        }
 
-    30% { opacity: 0; }
-    
-    70%   { opacity: 1; }
+        30% {
+            opacity: 0;
+        }
 
-    100%   { opacity: 1; }
-}
+        70% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 
 
     .slider-image-wrapper {
@@ -641,6 +649,34 @@
     }
 
 
+    .swiper-button-disabled {
+        display: none;
+    }
+
+    /* .img {
+    z-index: 9999;
+} */
+
+    /* .imageglow {
+    animation: anim-glow 2s ease infinite;
+    z-index: 99999;
+    
+}
+
+@keyframes anim-glow {
+	0% {
+		box-shadow: 0 0 rgba(#61EF61, 1);
+	}
+	100% {
+		box-shadow: 0 0 500px 10px transparent;
+		border-width: 2px;
+	}
+} */
+
+    /* .swiper-button-next-disabled {
+  opacity: 0;
+} */
+
 
     /* .animationbox {
         height: 150%;
@@ -648,10 +684,10 @@
 
         overflow: hidden;
         float: left; */
-        /* outline-style: solid;
+    /* outline-style: solid;
         outline-color: rgb(226, 226, 226);
         outline-width: 2px; */
-        /* position: relative;
+    /* position: relative;
     } */
 
     /* .characteranimation {
@@ -744,9 +780,45 @@
 
                 <div class="slider-item-content">
                     <div class="slider-image-wrapper">
-                        <lottie-player src="/story/charactalk.json" autoplay loop mode="bounce" background="transparent"
-                            speed="1" style="height: 100%; width: 100%; margin-left: -40%;">
-                        </lottie-player>
+                        <img class="imageglow" src="/images/towns/lakes.png"
+                            style="height: 50%; margin-top: 5%; margin-left: 2%;"></img>
+                    </div>
+                    <p class="slider-item-text">2. Welcome to LingoTowns! This is the map of the world. You can explore
+                        different towns
+                        and find games in each building.</p>
+                </div>
+            </div>
+            <div class="slider-item swiper-slide">
+
+                <div class="slider-item-content">
+                    <div class="slider-image-wrapper">
+                        <img class="imageglow" src="/images/building-icon/orig/farm.png"
+                            style="height: 70%; margin-top: 5%; margin-left: 2%;"></img>
+                    </div>
+                    <p class="slider-item-text">2. Welcome to LingoTowns! This is the map of the world. You can explore
+                        different towns
+                        and find games in each building.</p>
+                </div>
+            </div>
+            <div class="slider-item swiper-slide">
+
+                <div class="slider-item-content">
+                    <div class="slider-image-wrapper">
+                        <img class="imageglow" src="/images/building-icon/orig/food.png"
+                            style="height: 70%; margin-top: 5%; margin-left: 2%;"></img>
+                    </div>
+                    <p class="slider-item-text">2. Welcome to LingoTowns! This is the map of the world. You can explore
+                        different towns
+                        and find games in each building.</p>
+                </div>
+            </div>
+
+            <div class="slider-item swiper-slide">
+
+                <div class="slider-item-content">
+                    <div class="slider-image-wrapper">
+                        <img class="imageglow" src="/images/building-icon/orig/library.png"
+                            style="height: 70%; margin-top: 5%; margin-left: 2%;"></img>
                     </div>
                     <p class="slider-item-text">2. Welcome to LingoTowns! This is the map of the world. You can explore
                         different towns
@@ -761,19 +833,9 @@
                             speed="1" style="height: 100%; width: 100%; margin-left: -40%;">
                         </lottie-player>
                     </div>
-                    <p class="slider-item-text">3. Welcome to LingoTowns! This is the map of the world. You can explore
+                    <p class="slider-item-text">1. Welcome to LingoTowns! This is the map of the world. You can explore
                         different towns
                         and find games in each building.</p>
-                </div>
-            </div>
-            <div class="slider-item swiper-slide">
-
-                <div class="slider-item-content">
-                    <div class="slider-image-wrapper"></div>
-                    <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore</p>
-
-
                 </div>
             </div>
         </div>
