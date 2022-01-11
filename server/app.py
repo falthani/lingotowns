@@ -198,6 +198,11 @@ def tutorial_text():
     session['seen_tutorial'] = True
     return render_template("game-tutorial-text/index.html")
 
+@app.route("/playgame")
+def tutorial_plagame():
+    session['seen_tutorial'] = True
+    return render_template("story/playgame.html")
+
 
 @app.route("/forcelevelup")
 def forcelevelup():
