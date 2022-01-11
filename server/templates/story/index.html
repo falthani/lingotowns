@@ -1,162 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>LingoTowns Story</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flickity@2.2.2/dist/flickity.css"
-    />
-    <link rel="stylesheet" href="/story/style.css" />
-  </head>
-  <body>
-    <!-- partial:index.partial.html -->
-    <div class="screen">
-      <div class="carousel">
-        <div class="page sky">
-          <div class="story">
-            
 
-            <div class="scene1">
-              <lottie-player
-                src="/story/scene2.json"
-                background="transparent"
-                speed="1"
-                style="width: 1000px; height: 1000px; margin-top: -300px;"
-                controls
-                autoplay
-                loop
-              ></lottie-player>
-            </div>
+<head>
 
 
-              
-            
-              <div class="bubble-small">
-                <span>
-                  <h5
-                    style="
-                      text-align: left;
-                      color: rgb(0, 0, 0);
-                      margin-top: -15px;
-                    "
-                  >
-                    Future character 1
-                  </h5>
-                  <p class="typewriter" style="color: black">Greetings! We are scientists from the future. The future world has significantly regressed. Luckily, we discovered documents from the 21st century and we need your help in understanding them.</p>
-                </span>
-              </div>
-            
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Onboarding</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <div id="Page1">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="slider-item swiper-slide">
+          <div class="slider-image-wrapper">
+            <lottie-player id="player1" src="scene1.json" style=" height: 100%; width: 100%; padding-top: 5%;
+                --lottie-player-seeker-track-color: #f2f6ff;
+                --lottie-player-seeker-thumb-color: #f2f6ff;
+              " background="transparent" speed="1" autoplay></lottie-player>
+          </div>
+          <div class="slider-item-content">
+            <h1>Future Person 1</h1>
+            <span>
+              <p class="typewriter">Greetings! We are scientists from the future. The future world has significantly
+                regressed. Luckily, we discovered documents from the 21st century and we need your help in understanding
+                them.</p>
+            </span>
           </div>
         </div>
-        <div class="page sky">
-          <div class="story">
-            <div class="scene1">
-              <lottie-player
-                src="/story/diggingman.json"
-                background="transparent"
-                speed="1"
-                style="width: 1000px; height: 1000px; margin-top: -300px;"
-                autoplay
-                controls
-                loop
-              ></lottie-player>
-            </div>
-
-            
-
-            
-            
-            
-              <div class="bubble-small">
-                <span>
-                  <h5
-                    style="
-                      text-align: left;
-                      color: rgb(0, 0, 0);
-                      margin-top: -15px;
-                    "
-                  >
-                    Future character 1
-                  </h5>
-                  <p class="typewriter" style="color: black"> Those documents are scattered all around our towns. We don't know what they mean but we believe they hold valuable information to help our society progress.   </p>
-                </span>
-              </div>
-        
+        <div class="slider-item swiper-slide">
+          <div class="slider-image-wrapper">
+            <lottie-player id="player2" src="scene2.json" style=" height: 100%; width: 100%; padding-top: 5%;
+                --lottie-player-seeker-track-color: #f2f6ff;
+                --lottie-player-seeker-thumb-color: #f2f6ff;
+              " background="transparent" speed="1"></lottie-player>
+          </div>
+          <div class="slider-item-content">
+            <h1>Future Person 1</h1>
+            <p class="typewriter">Those documents are scattered all around our towns. We don't know what they mean but
+              we believe they hold valuable information to help our society progress.</p>
           </div>
         </div>
-        <div class="page sky">
-          <div class="story">
-            <div class="scene1">
-              <lottie-player
-                src="/story/scene5.json"
-                background="transparent"
-                speed="1"
-                style="width: 1000px; height: 1000px; margin-top: -300px;"
-                autoplay
-                controls
-                loop
-              ></lottie-player>
-            </div>
-
-            
-
-            
-            
-            
-              <div class="bubble-small">
-                <span>
-                  <h5
-                    style="
-                      text-align: left;
-                      color: rgb(0, 0, 0);
-                      margin-top: -15px;
-                    "
-                  >
-                    Future character 2
-                  </h5>
-                  <p class="typewriter" style="color: black"> Will you come and help us understand those documents?  </p>
-                </span>
-              </div>
-        
+        <div class="slider-item swiper-slide">
+          <div class="slider-image-wrapper">
+            <lottie-player id="player3" src="scene3.json" style=" height: 100%; width: 100%; padding-top: 5%;
+                --lottie-player-seeker-track-color: #f2f6ff;
+                --lottie-player-seeker-thumb-color: #f2f6ff;
+              " background="transparent" speed="1" ></lottie-player>
+            <img class="slider-image"
+              src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2600&q=80"
+              alt="SliderImg">
           </div>
-        </div>
-        <div class="page sky">
-          <div class="story">
-            <div class="scene1">
-              <lottie-player
-                src="/story/scene3.json"
-                background="transparent"
-                speed="1"
-                style="width: 1000px; height: 1000px; margin-top: -300px;"
-                autoplay
-                loop
-                controls
-              ></lottie-player>
+          <div class="slider-item-content">
+            <h1>Future Person 2</h1>
+            <p class="typewriter">Will you come and help us understand those documents?</p>
+          </div>
+
+          <div class="dialogueanswer">
+            <div class="no">
+              <button class="nobutton" onclick="window.location.href='https://www.google.com'">No</button>
+            </div>
+            <div class="yes">
+              <button class="yesbutton" onclick="window.location.href='playgame.html'">Yes</button>
             </div>
           </div>
-
-          
-          </div>
         </div>
-        
-        
 
-            
+        <div class="slider-buttons">
 
+          <button class="swiper-button-next">Next</button>
+        </div>
 
-            
-        
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
+
+
     <!-- partial -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
-    <script src="/story/script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>
+    <script src="./script.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  </body>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+</body>
+
 </html>

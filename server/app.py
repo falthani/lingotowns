@@ -188,6 +188,17 @@ def intro_text():
     session['seen_intro'] = True
     return render_template("story-text/index.html")
 
+@app.route("/game-animated")
+def tutorial_animated():
+    session['seen_tutorial'] = True
+    return render_template("game-tutorial-animated/index.html")
+
+@app.route("/game-text")
+def tutorial_text():
+    session['seen_tutorial'] = True
+    return render_template("game-tutorial-text/index.html")
+
+
 @app.route("/forcelevelup")
 def forcelevelup():
     uuid = session['auth']['uuid']

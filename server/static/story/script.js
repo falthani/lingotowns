@@ -1,7 +1,37 @@
-var $carousel = $('.carousel').flickity({
-	// selectedAttraction: 0.3,
-	// friction: 0.6
-})
+
+
+// let player1 = document.querySelector("#player1");
+let player2 = document.querySelector("#player2");
+let player3 = document.querySelector("#player3");
+
+
+
+let nextButton = document.querySelector('#swiper-button-next');
+
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  effect: 'fade',
+  loop: false,
+  preventClicks: false,
+  preventClicksPropagation: false,
+  speed: 300,
+  simulateTouch: false,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: false,
+    dynamicBullets: false,
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    Play: '.swiper-button-play',
+  }
+
+});
+
 
 function typewritereffect($el) {
   const characters = $el.text().split('');
@@ -19,8 +49,24 @@ function runtypewriters() {
   $("p.typewriter").each((i,el) => typewritereffect($(el)));
 }
 
-$carousel.on('change.flickity', function() {
+
+swiper.on('slideChange', function() {
   runtypewriters();
+  player2.play()
+  player3.play();
+  player3.seek(0);
+
 });
+
+
 runtypewriters();
 
+
+
+const on = () => {
+  document.getElementById("overlay").style.display = "block";
+}
+
+const off = () => {
+  document.getElementById("overlay").style.display = "none";
+}
