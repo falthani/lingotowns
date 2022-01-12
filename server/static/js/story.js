@@ -54,7 +54,7 @@ swiper.on('slideChange', function() {
   runtypewriters();
   player2.play()
   player3.play();
-  player3.seek(0);
+  player3.seek(100);
 
 });
 
