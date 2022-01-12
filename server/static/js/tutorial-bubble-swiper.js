@@ -13,6 +13,10 @@ pagination: {
     clickable: false,
       dynamicBullets: true
 },
+
+
+
+
 // Navigation arrows
 navigation: {
   nextEl: '.swiper-button-next',
@@ -32,3 +36,11 @@ swiper.mousewheel.disable()
   //   $('.swiper-button-prev').hide()
   //   $('.swiper-button-next').hide()
   // }
+
+
+  swiper.on('slideChange', function () {
+    if(this.activeIndex === 1) {
+        console.log("IM ON SECOND SLIDE!");
+        alert("IM ON SECOND SLIDE!");
+    }
+});

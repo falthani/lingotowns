@@ -1728,3 +1728,70 @@ document.addEventListener('DOMContentLoaded', function() {
     update_progression();
   });
 });
+
+
+
+//swiper settings for game tutorial
+
+
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  effect: 'fade',
+  loop: false,
+  speed: 300,
+  preventClicks: false,
+  preventClicksPropagation: false,
+  simulateTouch: false,
+
+pagination: {
+  el: '.swiper-pagination',
+    clickable: false,
+      dynamicBullets: true
+},
+
+
+
+
+// Navigation arrows
+navigation: {
+  nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    }
+  });
+
+  // if(swiper.activeIndex === 3) {
+  //   $('.swiper-button-prev').hide()
+  //   $('.swiper-button-next').hide()
+  // }
+
+swiper.mousewheel.disable()
+
+
+  // } else if (swiper.activeIndex === 1) {
+  //   $('.swiper-button-prev').hide()
+  //   $('.swiper-button-next').hide()
+  // }
+  
+  // let glow = 
+  // shadowColor = "rgba(0,255,0,1)";
+  // glow.shadowBlur = 50;
+  // glow.shadowOffsetX = 1;
+  // glow.shadowOffsetY = 1;;
+  
+
+  // function highlighter() {
+  //   console.log(highlight);
+  // }
+
+  swiper.on('slideChange', function () {
+    if(this.activeIndex === 1) {
+        console.log("IM ON SECOND SLIDE!");
+        alert("IM ON SECOND SLIDE!");
+        // this.context.highlight();
+    }
+});
+
+
+// if (tile && tile.startsWith("b") && this.mouseGridPosition) {
+//   highlight};
