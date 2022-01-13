@@ -1764,20 +1764,20 @@ var swiper = new Swiper('.swiper-container', {
 swiper.mousewheel.disable();
 
 // var highlight = highlight || false;
-function highlight_town() {
-  if(this.activeIndex === 1) {
-    console.log("IM ON SECOND SLIDE!");
-    alert("IM ON SECOND SLIDE!");
+// function highlight_town() {
+//   if(this.activeIndex === 1) {
+//     console.log("IM ON SECOND SLIDE!");
+//     alert("IM ON SECOND SLIDE!");
     // this.context.highlight(
     //   this.context.save();
     //   this.context.shadowColor = "rgba(0,255,0,1)";
     //   this.context.shadowBlur = 50;
     //   this.context.shadowOffsetX = 1;
     //   this.context.shadowOffsetY = 1;);
-  } 
-}
+//   } 
+// }
 
-swiper.on('slideChange', highlight_town);
+// swiper.on('slideChange', highlight_town);
 
 
 // if (tile && tile.startsWith("b") && this.mouseGridPosition) {
