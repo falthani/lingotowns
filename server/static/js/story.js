@@ -4,6 +4,7 @@
 let player2 = document.querySelector("#player2");
 let player3 = document.querySelector("#player3");
 
+let player4 = document.querySelector("#player4");
 
 
 let nextButton = document.querySelector('#swiper-button-next');
@@ -62,6 +63,9 @@ swiper.on('slideChange', function() {
 runtypewriters();
 
 
+player4.addEventListener('complete', function(){   
+  window.location.href = 'game-animated'; 
+});
 
 const on = () => {
   document.getElementById("overlay").style.display = "block";
