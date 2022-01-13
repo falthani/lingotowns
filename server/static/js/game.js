@@ -765,6 +765,10 @@ class Game {
       if (tile && tile.startsWith("b") && this.mouseGridPosition) {
         highlight = this.mouseGridPosition.distance(position) < 4;
       }
+      // highlight current location if on related intro slide
+      // if this.introslide.index = location_5 {
+      //   highlight = true
+      // }
       var complete = false;
       switch(tile) {
         case "b0":
@@ -1731,7 +1735,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//swiper settings for game tutorial
+// swiper settings for game tutorial
 
 
 var swiper = new Swiper('.swiper-container', {
@@ -1743,54 +1747,37 @@ var swiper = new Swiper('.swiper-container', {
   preventClicks: false,
   preventClicksPropagation: false,
   simulateTouch: false,
-
-pagination: {
-  el: '.swiper-pagination',
-    clickable: false,
-      dynamicBullets: true
-},
-
-
-
-
-// Navigation arrows
-navigation: {
-  nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    }
-  });
-
-  // if(swiper.activeIndex === 3) {
-  //   $('.swiper-button-prev').hide()
-  //   $('.swiper-button-next').hide()
-  // }
-
-swiper.mousewheel.disable()
-
-
-  // } else if (swiper.activeIndex === 1) {
-  //   $('.swiper-button-prev').hide()
-  //   $('.swiper-button-next').hide()
-  // }
-  
-  // let glow = 
-  // shadowColor = "rgba(0,255,0,1)";
-  // glow.shadowBlur = 50;
-  // glow.shadowOffsetX = 1;
-  // glow.shadowOffsetY = 1;;
-  
-
-  // function highlighter() {
-  //   console.log(highlight);
-  // }
-
-  swiper.on('slideChange', function () {
-    if(this.activeIndex === 1) {
-        console.log("IM ON SECOND SLIDE!");
-        alert("IM ON SECOND SLIDE!");
-        // this.context.highlight();
-    }
+  pagination: {
+    el: '.swiper-pagination', 
+    clickable: false, 
+    dynamicBullets: true
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  }
 });
+
+
+
+swiper.mousewheel.disable();
+
+// var highlight = highlight || false;
+function highlight_town() {
+  if(this.activeIndex === 1) {
+    console.log("IM ON SECOND SLIDE!");
+    alert("IM ON SECOND SLIDE!");
+    // this.context.highlight(
+    //   this.context.save();
+    //   this.context.shadowColor = "rgba(0,255,0,1)";
+    //   this.context.shadowBlur = 50;
+    //   this.context.shadowOffsetX = 1;
+    //   this.context.shadowOffsetY = 1;);
+  } 
+}
+
+swiper.on('slideChange', highlight_town);
 
 
 // if (tile && tile.startsWith("b") && this.mouseGridPosition) {
