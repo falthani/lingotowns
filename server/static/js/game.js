@@ -453,6 +453,8 @@ class Game {
     this.world = new World("uuid?");
     //this.world.addLevel(1);
     console.log(this.world.regions);
+    //highlight buildings for tutorial
+    this.highlighted_buildings = [];
     //this.building_placement = 
     this.mousedrag = new MouseDrag(this.canvas, function(lastX, lastY, x, y) {
       const movement = new Vec2(x-lastX, y-lastY).toCartesian();
@@ -466,7 +468,7 @@ class Game {
     this.toclose = [];
     window.addEventListener("message", this.messagedispatch.bind(this));
   }
-
+  
   loginNag() {
     const game = this;
     var loginReminder = document.getElementById("loginreminder");
@@ -765,23 +767,19 @@ class Game {
       if (tile && tile.startsWith("b") && this.mouseGridPosition) {
         highlight = this.mouseGridPosition.distance(position) < 4;
       }
-      // highlight current location if on related intro slide
-      // if this.introslide.index = location_5 {
-      //   highlight = true
-      // }
       var complete = false;
       switch(tile) {
         case "b0":
           complete = (town.games.food.completion == 100);
-          this.drawImageToTiles(position, new Vec2(3, 3), this.resources.bakery, 1.0, !complete && highlight);
+          this.drawImageToTiles(position, new Vec2(3, 3), this.resources.bakery, 1.0, (!complete && highlight) || this.isBuildingHighlighted(town.town_id, "b0"));
           break;
         case "b1":
           complete = (town.games.farm.completion == 100);
-          this.drawImageToTiles(position, new Vec2(3, 3), this.resources.farm, 1.0, !complete && highlight);
+          this.drawImageToTiles(position, new Vec2(3, 3), this.resources.farm, 1.0, (!complete && highlight) || this.isBuildingHighlighted(town.town_id, "b1"));
           break;
         case "b2":
           complete = (town.games.library.completion == 100);
-          this.drawImageToTiles(position, new Vec2(3, 3), this.resources.library, 1.0, !complete && highlight);
+          this.drawImageToTiles(position, new Vec2(3, 3), this.resources.library, 1.0, (!complete && highlight) || this.isBuildingHighlighted(town.town_id, "b2"));
           break;
         case ("r" + RoadWest):
         case ("r" + RoadEast):
@@ -1672,6 +1670,25 @@ class Game {
     this.lastTS = ts;
     window.requestAnimationFrame(this.draw.bind(this));
   }
+
+  highlightBuilding(town_id, building_id) {
+    this.highlighted_buildings.push("" + town_id + "_" + building_id);
+    this.requireDraw();
+  }
+
+  isBuildingHighlighted(town_id, building_id) {
+    return this.highlighted_buildings.indexOf("" + town_id + "_" + building_id) > -1;
+  }
+
+  removeHighlightFromBuilding(town_id, building_id) {
+    const index = this.highlighted_buildings.indexOf("" + town_id + "_" + building_id);
+    if (index > -1) {
+        this.highlighted_buildings.splice(index, 1);
+        this.requireDraw();
+        return true;
+    }
+    return false;
+  }
 }
 
 let game = new Game(canvas);
@@ -1759,26 +1776,26 @@ var swiper = new Swiper('.swiper-container', {
   }
 });
 
-
-
 swiper.mousewheel.disable();
 
-// var highlight = highlight || false;
-// function highlight_town() {
-//   if(this.activeIndex === 1) {
-//     console.log("IM ON SECOND SLIDE!");
-//     alert("IM ON SECOND SLIDE!");
-    // this.context.highlight(
-    //   this.context.save();
-    //   this.context.shadowColor = "rgba(0,255,0,1)";
-    //   this.context.shadowBlur = 50;
-    //   this.context.shadowOffsetX = 1;
-    //   this.context.shadowOffsetY = 1;);
-//   } 
-// }
+function highlight_town() {
+  if (this.activeIndex === 3) {
+    game.removeHighlightFromBuilding(0, "b1")
+    game.removeHighlightFromBuilding(0, "b2")
+    game.highlightBuilding(0, "b0")
+  } else if (this.activeIndex === 2) {
+    game.removeHighlightFromBuilding(0, "b0")
+    game.removeHighlightFromBuilding(0, "b2")
+    game.highlightBuilding(0, "b1") 
+  } else if (this.activeIndex === 4) {
+    game.removeHighlightFromBuilding(0, "b0")
+    game.removeHighlightFromBuilding(0, "b1")
+    game.highlightBuilding(0, "b2") 
+   } else {
+    game.removeHighlightFromBuilding(0, "b0")
+    game.removeHighlightFromBuilding(0, "b1")
+    game.removeHighlightFromBuilding(0, "b2") 
+  }
+}
 
-// swiper.on('slideChange', highlight_town);
-
-
-// if (tile && tile.startsWith("b") && this.mouseGridPosition) {
-//   highlight};
+swiper.on('slideChange', highlight_town);
