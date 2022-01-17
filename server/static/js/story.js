@@ -34,25 +34,25 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 
-function typewritereffect($el) {
-  const characters = $el.text().split('');
-  $el.text('');
-  characters.forEach(function(character) { 
-    const $span = $("<span>");
-    $span.text(character);
-    $span.css({opacity:0}).appendTo($el);
-    });
-  const $spans = $("span", $el);
-  $spans.each((i, el) => $(el).delay(40*i).animate({opacity: 1}), 100);
-}
+// function typewritereffect($el) {
+//   const characters = $el.text().split('');
+//   $el.text('');
+//   characters.forEach(function(character) { 
+//     const $span = $("<span>");
+//     $span.text(character);
+//     $span.css({opacity:0}).appendTo($el);
+//     });
+//   const $spans = $("span", $el);
+//   $spans.each((i, el) => $(el).delay(40*i).animate({opacity: 1}), 100);
+// }
 
-function runtypewriters() {
-  $("p.typewriter").each((i,el) => typewritereffect($(el)));
-}
+// function runtypewriters() {
+//   $("p.typewriter").each((i,el) => typewritereffect($(el)));
+// }
 
 
 swiper.on('slideChange', function() {
-  runtypewriters();
+  // runtypewriters();
   player2.play()
   player3.play();
   player3.seek(100);
@@ -60,7 +60,7 @@ swiper.on('slideChange', function() {
 });
 
 
-runtypewriters();
+// runtypewriters();
 
 
 player4.addEventListener('complete', function(){   

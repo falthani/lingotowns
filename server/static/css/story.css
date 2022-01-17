@@ -158,6 +158,8 @@ display: inline-block;
   justify-content: center;
   transition: 0.4s;
   background-color:rgb(243, 243, 243);
+  margin-top: -27%;
+  z-index: 999;
 }
 .slider-item-content > * {
   opacity: 0;
