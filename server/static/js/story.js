@@ -1,6 +1,6 @@
 
 
-// let player1 = document.querySelector("#player1");
+let player1 = document.querySelector("#player1");
 let player2 = document.querySelector("#player2");
 let player3 = document.querySelector("#player3");
 
@@ -57,10 +57,15 @@ swiper.on('slideChange', function() {
   player3.play();
   player3.seek(100);
 
+
 });
 
 
 // runtypewriters();
+
+// player1.addEventListener('load', function(){   
+//   document.getElementById("slider-item-content").style.display = "block"; 
+// });
 
 
 player4.addEventListener('complete', function(){   

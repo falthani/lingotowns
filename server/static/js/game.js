@@ -1501,7 +1501,7 @@ class Game {
     }
     if (highlight) {
       this.context.save();
-      this.context.shadowColor = "rgba(0,255,0,1)";
+      this.context.shadowColor = "rgba(10, 255, 128, 1)";
       this.context.shadowBlur = 50;
       this.context.shadowOffsetX = 1;
       this.context.shadowOffsetY = 1;
