@@ -1,13 +1,8 @@
-
-
 let player1 = document.querySelector("#player1");
 let player2 = document.querySelector("#player2");
 let player3 = document.querySelector("#player3");
 
-let player4 = document.querySelector("#player4");
-
-
-let nextButton = document.querySelector('#swiper-button-next');
+let replayButton = document.querySelector('#replay-icon');
 
 var swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
@@ -53,29 +48,72 @@ var swiper = new Swiper('.swiper-container', {
 
 swiper.on('slideChange', function() {
   // runtypewriters();
-  player2.play()
+  player2.play();
   player3.play();
   player3.seek(100);
-
-
 });
 
+function displayReload(){
+  document.getElementById("replay-icon").classList.add('active-animation');
+}
+
+function hideReplay(){
+  document.getElementById("replay-icon").classList.remove('active-animation');
+}
 
 // runtypewriters();
 
-// player1.addEventListener('load', function(){   
-//   document.getElementById("slider-item-content").style.display = "block"; 
-// });
+player1.addEventListener('complete', displayReload);
+player2.addEventListener('complete', displayReload);
+// player3.addEventListener('complete', displayReload);
+
+player2.addEventListener('play', hideReplay);
+player3.addEventListener('frame', hideReplay);
 
 
-player4.addEventListener('complete', function(){   
-  window.location.href = 'game-animated'; 
-});
-
-const on = () => {
-  document.getElementById("overlay").style.display = "block";
+function loopScene (){
+  player1.seek(0);
+  player1.play();
+  player2.seek(0);
+  player2.play();
 }
 
-const off = () => {
-  document.getElementById("overlay").style.display = "none";
+
+
+replayButton.onclick = function() {hideReplay()};
+
+
+
+
+function animateButton (){
+  document.getElementById('swiper-button-next').classList.add('active-animation');
 }
+
+function stopAnimateButton (){
+  document.getElementById('swiper-button-next').classList.remove('active-animation');
+}
+
+function removePrev (){
+  document.getElementById('swiper-button-prev').style.opacity = 0;
+}
+
+function addPrev (){
+  document.getElementById('swiper-button-prev').style.opacity = 1;
+}
+
+document.getElementById('swiper-button-next').onclick = function() {addPrev()};
+
+
+
+
+player1.addEventListener('complete', animateButton);
+player2.addEventListener('complete', animateButton);
+player3.addEventListener('complete', removePrev);
+
+
+player2.addEventListener('play', stopAnimateButton);
+
+player3.addEventListener('frame', stopAnimateButton);
+player3.addEventListener('frame', removePrev);
+
+
