@@ -199,7 +199,7 @@ def tutorial_text():
     return render_template("game-tutorial-text/index.html")
 
 @app.route("/playgame")
-def tutorial_plagame():
+def tutorial_playgame():
     session['seen_tutorial'] = True
     return render_template("story/playgame.html")
 
