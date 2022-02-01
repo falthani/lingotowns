@@ -558,7 +558,8 @@ word-wrap: break-word;
 .dialogueanswer {
 z-index: 999;
 margin-top: -12%;
-padding-bottom: 10px;
+padding-bottom: 10%;
+/* padding-bottom: 10px; */
 
 }
 

@@ -54,11 +54,11 @@ swiper.on('slideChange', function() {
 });
 
 function displayReload(){
-  document.getElementById("replay-icon").classList.add('active-animation');
+  replayButton.classList.add('active-animation');
 }
 
 function hideReplay(){
-  document.getElementById("replay-icon").classList.remove('active-animation');
+  replayButton.classList.remove('active-animation');
 }
 
 // runtypewriters();
@@ -93,6 +93,10 @@ function stopAnimateButton (){
   document.getElementById('swiper-button-next').classList.remove('active-animation');
 }
 
+function removeAnimateButton (){
+  replayButton.style.opacity = 0;
+}
+
 function removePrev (){
   document.getElementById('swiper-button-prev').style.opacity = 0;
 }
@@ -101,19 +105,19 @@ function addPrev (){
   document.getElementById('swiper-button-prev').style.opacity = 1;
 }
 
-document.getElementById('swiper-button-next').onclick = function() {addPrev()};
+// document.getElementById('swiper-button-next').onclick = function() {addPrev()};
 
 
 
 
 player1.addEventListener('complete', animateButton);
 player2.addEventListener('complete', animateButton);
-player3.addEventListener('complete', removePrev);
+// player2.addEventListener('play', addPrev);
 
 
 player2.addEventListener('play', stopAnimateButton);
 
-player3.addEventListener('frame', stopAnimateButton);
-player3.addEventListener('frame', removePrev);
+player3.addEventListener('complete', removeAnimateButton);
+// player3.addEventListener('frame', removePrev);
 
 
