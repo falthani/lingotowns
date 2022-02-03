@@ -1799,3 +1799,9 @@ function highlight_town() {
 }
 
 swiper.on('slideChange', highlight_town);
+
+function movePrev (){
+  document.getElementById('swiper-button-prev').style.opacity = 0 ;
+}
+
+// swiper.on(activeIndex === 5, movePrev); 
