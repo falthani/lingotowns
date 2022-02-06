@@ -1800,8 +1800,19 @@ function highlight_town() {
 
 swiper.on('slideChange', highlight_town);
 
-function movePrev (){
-  document.getElementById('swiper-button-prev').style.opacity = 0 ;
+function showPlay (){
+  document.getElementById('playbutton').style.display = "block" ;
+  document.getElementById('swiper-button-prev').style.left = "-74.9%" ;
+
 }
 
-// swiper.on(activeIndex === 5, movePrev); 
+function hidePlay (){
+  document.getElementById('playbutton').style.display = "none" ;
+  document.getElementById('swiper-button-prev').style.left = "0%" ;
+}
+
+
+document.getElementById('swiper-button-prev').onclick = function() {hidePlay()};
+
+// swiper.on('slideChange', hidePlay); 
+swiper.on('reachEnd', showPlay); 
