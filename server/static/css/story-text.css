@@ -714,7 +714,7 @@ padding-bottom: 10px;
   .button6{
     display:inline-block;
     padding:0.7em 1.4em;
-    /* margin:0 0.3em 0.3em 0; */
+    margin:0 0.3em 0.3em 0;
     border-radius:0.15em;
     box-sizing: border-box;
     text-decoration:none;
@@ -727,12 +727,20 @@ padding-bottom: 10px;
     text-align:center;
     position:relative;
     font-size: 18pt;
-    left: 25%;
+    left: 35%;
     top: 40%;
+    cursor: pointer;
+    z-index: 99999;
+    display: block;
     }
-    .button6:active{
-    top:0.1em;
-    }
+    .button6:active {
+      top: 1px;
+  }
+
+  .button6:hover {
+      background-color: #3b4ab8;
+  }
+
     @media all and (max-width:30em){
      .button6{
     display:block;

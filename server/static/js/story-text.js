@@ -1,12 +1,5 @@
 
 
-// let player1 = document.querySelector("#player1");
-let player2 = document.querySelector("#player2");
-let player3 = document.querySelector("#player3");
-
-
-
-let nextButton = document.querySelector('#swiper-button-next');
 
 var swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
@@ -27,7 +20,6 @@ var swiper = new Swiper('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-    Play: '.swiper-button-play',
   }
 
 });
@@ -59,14 +51,30 @@ var swiper = new Swiper('.swiper-container', {
 // });
 
 
-runtypewriters();
+// runtypewriters();
 
 
 
-const on = () => {
-  document.getElementById("overlay").style.display = "block";
-}
+// const on = () => {
+//   document.getElementById("overlay").style.display = "block";
+// }
 
-const off = () => {
-  document.getElementById("overlay").style.display = "none";
-}
+// const off = () => {
+//   document.getElementById("overlay").style.display = "none";
+// }
+
+
+// function showPlay (){
+//   document.getElementById('button6').style.display = "block" ;
+
+// }
+
+// function hidePlay (){
+//   document.getElementById('button6').style.display = "none" ;
+// }
+
+
+// document.getElementById('swiper-button-prev').onclick = function() {hidePlay()};
+
+// swiper.on('slideChange', hidePlay); 
+// swiper.on('reachEnd', showPlay); 
