@@ -1556,7 +1556,12 @@ class Game {
     const townsummarybutton = gameoverlay.getElementsByClassName('townsummary');
     for (var i = 0; i < townsummarybutton.length; i++) {
       townsummarybutton[i].addEventListener('click', function() {
-        game.updateFocus(townposition, 1.8);
+        game.updateFocus(townposition, 2.0);
+        // this.style.cursor = "pointer";
+        //game.townsummary(townInformation);
+      });
+      townsummarybutton[i].addEventListener('mouseover', function() {
+        this.style.cursor = "pointer";
         //game.townsummary(townInformation);
       });
     }
