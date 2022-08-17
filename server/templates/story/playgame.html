@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1Z33FZBD9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-X1Z33FZBD9');
-  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta charset="UTF-8">
   <title>Play</title>
@@ -19,13 +9,13 @@
 </head>
 
 <body>
-  <div id="playgame">
+  <div id="playgame" style="height: 1080px;width: 1080px;">
     <div class="gamewrapper">
       <div class="gameanimation">
         <lottie-player id="player4" class="animation" src="/story/scene3.json" style="
                 --lottie-player-seeker-track-color: #f2f6ff;
                 --lottie-player-seeker-thumb-color: #f2f6ff;
-              " autoplay background="transparent" speed="1.5"></lottie-player>
+              " autoplay background="transparent" speed="1.2"></lottie-player>
       </div>
     </div>
   </div>
@@ -35,5 +25,4 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
 </body>
-
 </html>

@@ -399,7 +399,7 @@ class Game {
     this.wasNearCompass = false;
     this.context = canvas.getContext("2d");
     this.minimapcontext = minimapcanvas.getContext("2d");
-    this.context.font = "12px Verdana";
+    this.context.font = "12px Arial";
     this.regions = [new WoodlandRegion(this), new LakesRegion(this), new DesertRegion(this), new FarmRegionA(this), new FarmRegionB(this)];
     this.region_by_name = {"Desert": new DesertRegion(this), "Lakes": new LakesRegion(this), "Farms": new FarmRegionA(this), "Woods":new WoodlandRegion(this)};
     this.regions_colors = this.regions.map(function(r) {return hexColorToRGB(r.color())});
@@ -753,18 +753,6 @@ class Game {
     return this.getTownInformation(this.lastregion);
   }
 
-  drawBuildingLabel(label, buildingPosition) {
-    this.context.save();
-    this.context.font = "600 20px Verdana";
-    this.context.textAlign = "center";
-    const labelpos = this.toScreen(buildingPosition.clone().sub(new Vec2(4,4)));
-    this.context.shadowColor = 'black';
-    this.context.shadowBlur = 5;
-    this.context.fillStyle = "white";
-    this.context.fillText(label, labelpos.x, labelpos.y);
-    this.context.restore();
-}
-
   drawMap() {
     const worldDimensions = this.worldDimensions();
     let locations = this.screenWorldLocations();
@@ -788,21 +776,18 @@ class Game {
           if (town.games.food) {
           complete = (town.games.food.completion == 100);
           this.drawImageToTiles(position, new Vec2(3, 3), this.resources.bakery, 1.0, (!complete && highlight) || this.isBuildingHighlighted(town.town_id, "b0"));
-            if (highlight) this.drawBuildingLabel("CafeClicker", position)
           }
           break;
         case "b1":
           if (town.games.farm) {
           complete = (town.games.farm.completion == 100);
           this.drawImageToTiles(position, new Vec2(3, 3), this.resources.farm, 1.0, (!complete && highlight) || this.isBuildingHighlighted(town.town_id, "b1"));
-            if (highlight) this.drawBuildingLabel("PhraseFarm", position)
           }
           break;
         case "b2":
           if (town.games.library) {
           complete = (town.games.library.completion == 100);
           this.drawImageToTiles(position, new Vec2(3, 3), this.resources.library, 1.0, (!complete && highlight) || this.isBuildingHighlighted(town.town_id, "b2"));
-            if (highlight) this.drawBuildingLabel("LingoTorium", position)
           }
           break;
         case ("r" + RoadWest):
@@ -1865,5 +1850,3 @@ document.getElementById('swiper-button-prev').onclick = function() {hidePlay()};
 
 // swiper.on('slideChange', hidePlay); 
 swiper.on('reachEnd', showPlay); 
-
-
