@@ -169,7 +169,23 @@ def auth_from_token(token):
 def info():
     return json.dumps({k:v for k,v in session.items()})
 
-@app.route("/")
+# @app.route("/")
+# def lingotowns():
+#     auth_token = request.args.get("auth_token")
+#     session_auth = session.get('auth')
+#     if auth_token:
+#         session['auth'] = auth_from_token(auth_token)
+#         session['auth_token'] = auth_token
+#         return redirect("/")
+#     elif session_auth:
+#         if True:#session.get('seen_intro'):
+#             return render_template("game.html", auth_server=AUTH_SERVER, is_guest=(session_auth['username'] == "Guest"))
+#         else:
+#             return redirect("/intro")
+#     else:
+#         return redirect(AUTH_SERVER + "/login-as-guest?redirect=" + HOSTNAME)
+
+@app.route("/play")
 def lingotowns():
     auth_token = request.args.get("auth_token")
     session_auth = session.get('auth')
@@ -185,10 +201,23 @@ def lingotowns():
     else:
         return redirect(AUTH_SERVER + "/login-as-guest?redirect=" + HOSTNAME)
 
+
 @app.route("/intro")
 def intro():
+    if "intro_complete" in request.cookies:
+        return redirect("/play")
     session['seen_intro'] = True
     return render_template("story/index.html")
+
+@app.route("/")
+def homepage():
+    session['seen_homepage'] = True
+
+    username = session.get('auth',{}).get('username')
+    auth_missing = username is None
+    is_guest = username == "Guest"
+    logged_in = not auth_missing and not is_guest
+    return render_template("homepage.html", logged_in=logged_in)
 
 @app.route("/intro-text")
 def intro_text():
@@ -197,6 +226,8 @@ def intro_text():
 
 @app.route("/game-animated")
 def tutorial_animated():
+    if "intro_complete" in request.cookies:
+        return redirect("/playgame")
     session['seen_tutorial'] = True
     return render_template("game-tutorial-animated/index.html")
 
